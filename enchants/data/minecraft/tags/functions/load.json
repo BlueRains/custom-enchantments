@@ -1,5 +1,3 @@
 {
-	"values": [
-		"tmp:load"
-	]
+  "values": ["enchants:load"]
 }
