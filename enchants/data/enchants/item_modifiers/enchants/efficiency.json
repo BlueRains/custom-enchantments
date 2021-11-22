@@ -1,0 +1,11 @@
+{
+  "function": "minecraft:set_enchantments",
+  "enchantments": {
+    "minecraft:efficiency": {
+      "type": "minecraft:binomial",
+      "n": 5,
+      "p": 0.5
+    }
+  },
+  "add": true
+}
