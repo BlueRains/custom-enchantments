@@ -1,3 +1,2 @@
- 
- # minecraft:load
+# minecraft:load
  
