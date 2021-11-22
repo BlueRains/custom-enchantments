@@ -1,1 +1,1 @@
-execute as @e run function enchants:tick
+execute as @e run function cenchant:tick
