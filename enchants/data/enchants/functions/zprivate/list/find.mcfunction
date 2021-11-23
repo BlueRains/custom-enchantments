@@ -19,7 +19,7 @@ execute store success score CompFail Tools run data modify storage tools:compare
 #tellraw @a [{"text":"A == B: "},{"score":{"name":"CompFail","objective": "Tools"}}]
 
 # If list item is what we're searching for. run exit loop procedures.
-execute if score CompFail Tools matches 0 run function enchants:list/exit
+execute if score CompFail Tools matches 0 run function enchants:zprivate/list/exit
 
 #if not continue iteration (until list is empty)
-execute if score CompFail Tools matches 1 run function enchants:list/continue
+execute if score CompFail Tools matches 1 run function enchants:zprivate/list/continue

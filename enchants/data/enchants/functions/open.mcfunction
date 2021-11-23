@@ -1,5 +1,6 @@
+tag @a[tag=vdvray] add enchanter
 tag @s add open
-item replace block ~ ~ ~ inventory.0 with light_gray_stained_glass_pane{display: {Name: '{"text":""}'}}
+item replace block ~ ~ ~ inventory.0 with gray_stained_glass_pane{display: {Name: '{"text":""}'}}
 item replace block ~ ~ ~ inventory.1 from block ~ ~ ~ inventory.0
 item replace block ~ ~ ~ inventory.2 from block ~ ~ ~ inventory.0
 item replace block ~ ~ ~ inventory.3 from block ~ ~ ~ inventory.0

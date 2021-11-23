@@ -3,9 +3,8 @@
 
 scoreboard objectives add ce_bin dummy
 scoreboard objectives add chests minecraft.custom:minecraft.open_chest
-
+# itemlist of all enchantable items
 data remove storage cenchant:items itemlist
-data modify storage cenchant:items storage.tool set value 10b
 data modify storage cenchant:items itemlist append value {Slot: 11, id: "minecraft:wooden_sword"}
 data modify storage cenchant:items itemlist append value {Slot: 12, id: "minecraft:stone_sword"}
 data modify storage cenchant:items itemlist append value {Slot: 13, id: "minecraft:iron_sword"}
@@ -67,5 +66,5 @@ data modify storage cenchant:items itemlist append value {Slot: 113, id: "minecr
 data modify storage cenchant:items itemlist append value {Slot: 114, id: "minecraft:fishing_rod"}
 data modify storage cenchant:items itemlist append value {Slot: 115, id: "minecraft:shears"}
 data modify storage cenchant:items itemlist append value {Slot: 116, id: "minecraft:trident"}
-
+# end
 say reloaded
