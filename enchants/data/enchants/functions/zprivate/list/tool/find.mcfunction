@@ -11,17 +11,17 @@ execute store success score IterationSuccess ce_tool run data modify storage too
 data remove storage tools:iteration List[0]
 
 # Lists should always come as [Slot, id] pair lists 
-data modify storage tools:compare A set from storage tools:iteration Current.Slot
+data modify storage tools:compare A set from storage tools:iteration Current.id
 
 
-tellraw @a [{"text":"Compared: "},{"storage":"tools:compare","nbt":"A"},{"text":" and "},{"storage":"tools:compare","nbt":"B"},{"text":" ("},{"storage":"tools:iteration","nbt":"Current.id"},{"text":")"}]
-# If an overwrite happens, a 1 will be stored in Global(fake player)'s CTemp score. If values are the same, a 0 will be stored.
+tellraw @a [{"text":"Compared: "},{"storage":"tools:compare","nbt":"A"},{"text":" and "},{"storage":"tools:compare","nbt":"B"},{"text":" ("},{"storage":"tools:iteration","nbt":"Current.Slot"},{"text":")"}]
+# If an overwrite happens, a 1 will be stored in (global) CompFail ce_tool score. If values are the same, a 0 will be stored.
 execute store success score CompFail ce_tool run data modify storage tools:compare A set from storage tools:compare B
 #tellraw @a [{"text":"A != B: "},{"score":{"name":"CompFail","objective": "ce_tool"}}]
 
 
 # If list item is what we're searching for. run exit loop procedures.
-execute if score CompFail ce_tool matches 0 run function enchants:zprivate/list/slot/exit
+execute if score CompFail ce_tool matches 0 run function enchants:zprivate/list/tool/exit
 
 #if not continue iteration (until list is empty)
-execute if score CompFail ce_tool matches 1 run function enchants:zprivate/list/slot/continue
+execute if score CompFail ce_tool matches 1 run function enchants:zprivate/list/tool/continue
