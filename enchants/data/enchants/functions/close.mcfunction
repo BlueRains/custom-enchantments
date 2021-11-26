@@ -25,7 +25,6 @@ item replace block ~ ~ ~ container.24 from block ~ ~ ~ container.0
 item replace block ~ ~ ~ container.25 from block ~ ~ ~ container.0
 item replace block ~ ~ ~ container.26 from block ~ ~ ~ container.0
 # end
-say close
 particle angry_villager ~ ~ ~
 scoreboard players reset @s ce.timer
 tag @s remove open

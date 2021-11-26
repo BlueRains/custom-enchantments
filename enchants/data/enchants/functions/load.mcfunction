@@ -10,6 +10,9 @@ scoreboard objectives add ce.timer dummy
 scoreboard objectives add chests minecraft.custom:minecraft.open_chest
 data modify storage cenchant:tools storage set value 10b
 data modify storage cenchant:items storage set value 12b
+# list of all enchantments
+data remove storage cenchant:enchantments list
+data modify storage cenchant:tools list append value {id: "minecraft:enchanted_book"}
 # list of all supportive items
 data remove storage cenchant:items list
 data modify storage cenchant:items list append value {Slot: 0, id: "minecraft:gray_stained_glass_pane"}
