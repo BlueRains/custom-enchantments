@@ -1,7 +1,7 @@
 {
   "function": "minecraft:set_enchantments",
   "enchantments": {
-    "minecraft:efficiency": 1
+    "minecraft:fortune": 1
   },
   "add": true
 }

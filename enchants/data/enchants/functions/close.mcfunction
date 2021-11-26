@@ -26,6 +26,7 @@ item replace block ~ ~ ~ container.25 from block ~ ~ ~ container.0
 item replace block ~ ~ ~ container.26 from block ~ ~ ~ container.0
 # end
 say close
+particle angry_villager ~ ~ ~
 scoreboard players reset @s ce.timer
 tag @s remove open
 execute as @a[tag=enchanter] at @s unless entity @e[type=marker,distance=..5] run tag @s remove enchanter
