@@ -1,4 +1,4 @@
-item replace block ~ ~ ~ container.0 with gray_stained_glass_pane{display: {Name: '{"text":""}'}}
+data modify block ~ ~ ~ Items prepend from storage cenchant:settings fillitem
 item replace block ~ ~ ~ container.1 from block ~ ~ ~ container.0
 item replace block ~ ~ ~ container.2 from block ~ ~ ~ container.0
 item replace block ~ ~ ~ container.3 from block ~ ~ ~ container.0
