@@ -1,2 +1,2 @@
-data modify storage tools:iteration Result set from storage tools:iteration Current.Slot
-#tellraw @a [{"text":"iteration result: "},{"storage":"tools:iteration","nbt":"Result"}]
+data modify storage list:iteration Result set from storage list:iteration Current.Slot
+#tellraw @a [{"text":"iteration result: "},{"storage":"list:iteration","nbt":"Result"}]

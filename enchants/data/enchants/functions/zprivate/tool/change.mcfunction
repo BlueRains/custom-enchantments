@@ -1,15 +1,15 @@
 scoreboard players reset @s ce.tool
 scoreboard players reset @s ce.list
-data remove storage tools:iteration Result
+data remove storage list:iteration Result
 data modify entity @s data.chest set from block ~ ~ ~ Items
-data modify storage tools:compare B set from storage cenchant:tools storage
-data modify storage tools:iteration List set from entity @s data.chest
+data modify storage list:compare B set from storage cenchant:tools storage
+data modify storage list:iteration List set from entity @s data.chest
 function enchants:zprivate/list/slot/find
-data modify storage tools:compare B set from storage tools:iteration Result
-data modify storage tools:iteration List set from storage cenchant:tools list
+data modify storage list:compare B set from storage list:iteration Result
+data modify storage list:iteration List set from storage cenchant:tools list
 function enchants:zprivate/list/tool/find
-data modify entity @s data.item set from storage tools:iteration Current
-execute if score IterationSuccess ce.list matches 1 store result score @s ce.list run data get storage tools:iteration Result
+data modify entity @s data.item set from storage list:iteration Current
+execute if score IterationSuccess ce.list matches 1 store result score @s ce.list run data get storage list:iteration Result
 scoreboard players operation @s ce.tool = @s ce.list
 execute if score @s ce.list matches 0 run function enchants:zprivate/tool/list/empty
 execute if score @s ce.list matches 10..19 run function enchants:zprivate/tool/list/sword
@@ -28,4 +28,4 @@ execute if score @s ce.list matches 113 run function enchants:zprivate/tool/list
 execute if score @s ce.list matches 114 run function enchants:zprivate/tool/list/fishing_rod
 execute if score @s ce.list matches 115 run function enchants:zprivate/tool/list/shears
 execute if score @s ce.list matches 116 run function enchants:zprivate/tool/list/trident
-data remove storage tools:iteration List
+data remove storage list:iteration List

@@ -1,22 +1,22 @@
-#define storage tools:compare
-#define storage tools:iteration
+#define storage list:compare
+#define storage list:iteration
 # list_find.mcfunction --
 # Set current to null to check if list is empty in the next step
-data modify storage tools:iteration Current set value {}
+data modify storage list:iteration Current set value {}
 
 # Set current to first item in list and check if it was successfull. if not loop wil exit if it hits iteration_continue.
-execute store success score IterationSuccess ce.list run data modify storage tools:iteration Current set from storage tools:iteration List[0]
+execute store success score IterationSuccess ce.list run data modify storage list:iteration Current set from storage list:iteration List[0]
 
 # Remove currently processed item from list.
-data remove storage tools:iteration List[0]
+data remove storage list:iteration List[0]
 
 # Lists should always come as [Slot, id] pair lists 
-data modify storage tools:compare A set from storage tools:iteration Current.Slot
+data modify storage list:compare A set from storage list:iteration Current.Slot
 
 
-#tellraw @a [{"text":"Compared: "},{"storage":"tools:compare","nbt":"A"},{"text":" and "},{"storage":"tools:compare","nbt":"B"},{"text":" ("},{"storage":"tools:iteration","nbt":"Current.id"},{"text":")"}]
+#tellraw @a [{"text":"Compared: "},{"storage":"list:compare","nbt":"A"},{"text":" and "},{"storage":"list:compare","nbt":"B"},{"text":" ("},{"storage":"list:iteration","nbt":"Current.id"},{"text":")"}]
 # If an overwrite happens, a 1 will be stored in Global(fake player)'s CTemp score. If values are the same, a 0 will be stored.
-execute store success score CompFail ce.list run data modify storage tools:compare A set from storage tools:compare B
+execute store success score CompFail ce.list run data modify storage list:compare A set from storage list:compare B
 # tellraw @a [{"text":"A != B: "},{"score":{"name":"CompFail","objective": "ce.list"}}]
 
 

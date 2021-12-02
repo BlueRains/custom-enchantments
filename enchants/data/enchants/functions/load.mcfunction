@@ -12,7 +12,9 @@ scoreboard objectives add chests minecraft.custom:minecraft.open_chest
 data modify storage cenchant:tools storage set value 10b
 data modify storage cenchant:items storage set value 12b
 data modify storage cenchant:settings fillitem set value {Slot: 0b, Count: 1b, id: "minecraft:gray_stained_glass_pane", tag: {display: {Name: '{"text":""}'}}}
+data modify storage cenchant:settings tempitem set value {Slot: 0b, Count: 1b, id: "minecraft:bowl"}
 # list of all enchantments
+data remove storage cenchant:enchantments chest
 data remove storage cenchant:enchantments axe
 data remove storage cenchant:enchantments boots
 data remove storage cenchant:enchantments bow
@@ -30,8 +32,17 @@ data remove storage cenchant:enchantments shovel
 data remove storage cenchant:enchantments sword
 data remove storage cenchant:enchantments tools
 data remove storage cenchant:enchantments trident
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 5b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 6b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 7b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 14b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 15b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 16b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 23b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 24b}
+data modify storage cenchant:enchantments chest append value {id: "minecraft:bowl", Count: 1b, Slot: 25b}
 data modify storage cenchant:enchantments axe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Bane of Arthropods","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Spider Eye","color":"dark_purple"}]']}}}
-data modify storage cenchant:enchantments axe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
+data modify storage cenchant:enchantments axe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Iron Ingot","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments axe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Fortune","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Crafting Table","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments axe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Mending","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Experience Bottle","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments axe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Sharpness","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Iron Ingot","color":"dark_purple"}]']}}}
@@ -80,7 +91,7 @@ data modify storage cenchant:enchantments helmet append value {id: "minecraft:bo
 data modify storage cenchant:enchantments helmet append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Respiration","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Scute","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments helmet append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Thorns","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Redstone","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments helmet append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Unbreaking","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Brick","color":"dark_purple"}]']}}}
-data modify storage cenchant:enchantments hoe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
+data modify storage cenchant:enchantments hoe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Iron Ingot","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments hoe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Fortune","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Crafting Table","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments hoe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Mending","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Experience Bottle","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments hoe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Silk Touch","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
@@ -92,15 +103,15 @@ data modify storage cenchant:enchantments leggings append value {id: "minecraft:
 data modify storage cenchant:enchantments leggings append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Protection","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"16x Iron Bars","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments leggings append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Thorns","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Redstone","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments leggings append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Unbreaking","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Brick","color":"dark_purple"}]']}}}
-data modify storage cenchant:enchantments pickaxe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
+data modify storage cenchant:enchantments pickaxe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Iron Ingot","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments pickaxe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Fortune","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Crafting Table","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments pickaxe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Mending","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Experience Bottle","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments pickaxe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Silk Touch","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments pickaxe append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Unbreaking","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Brick","color":"dark_purple"}]']}}}
-data modify storage cenchant:enchantments shears append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
+data modify storage cenchant:enchantments shears append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Iron Ingot","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments shears append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Mending","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Experience Bottle","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments shears append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Unbreaking","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Brick","color":"dark_purple"}]']}}}
-data modify storage cenchant:enchantments shovel append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
+data modify storage cenchant:enchantments shovel append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Efficiency","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Iron Ingot","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments shovel append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Fortune","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Crafting Table","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments shovel append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Mending","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Experience Bottle","color":"dark_purple"}]']}}}
 data modify storage cenchant:enchantments shovel append value {id: "minecraft:book", tag: {display: {Name: '{"text":"Silk Touch","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"Diamond","color":"dark_purple"}]']}}}
@@ -125,69 +136,42 @@ data modify storage cenchant:enchantments trident append value {id: "minecraft:b
 #data modify storage cenchant:enchantments xxx append value {id: "minecraft:book", tag: {display: {Name: '{"text":"xxx","color":"yellow","bold":true,"italic":false}', Lore: ['[{"text":"Cost: ","color":"dark_purple"},{"text":"xxx","color":"dark_purple"}]']}}}
 # list of all supportive items
 data remove storage cenchant:items list
-data modify storage cenchant:items list append value {Slot: 0, id: "minecraft:gray_stained_glass_pane"}
-data modify storage cenchant:items list append value {Slot: 1, id: "minecraft:feather"}
-#data modify storage cenchant:items list append value {Slot: 2, id: "minecraft:stone_sword"}
-#data modify storage cenchant:items list append value {Slot: 3, id: "minecraft:iron_sword"}
-#data modify storage cenchant:items list append value {Slot: 4, id: "minecraft:golden_sword"}
-#data modify storage cenchant:items list append value {Slot: 5, id: "minecraft:diamond_sword"}
-#data modify storage cenchant:items list append value {Slot: 6, id: "minecraft:netherite_sword"}
-#data modify storage cenchant:items list append value {Slot: 7, id: "minecraft:wooden_pickaxe"}
-#data modify storage cenchant:items list append value {Slot: 8, id: "minecraft:stone_pickaxe"}
-#data modify storage cenchant:items list append value {Slot: 9, id: "minecraft:iron_pickaxe"}
-#data modify storage cenchant:items list append value {Slot: 10, id: "minecraft:golden_pickaxe"}
-#data modify storage cenchant:items list append value {Slot: 11, id: "minecraft:diamond_pickaxe"}
-#data modify storage cenchant:items list append value {Slot: 12, id: "minecraft:netherite_pickaxe"}
-#data modify storage cenchant:items list append value {Slot: 13, id: "minecraft:wooden_axe"}
-#data modify storage cenchant:items list append value {Slot: 14, id: "minecraft:stone_axe"}
-#data modify storage cenchant:items list append value {Slot: 15, id: "minecraft:iron_axe"}
-#data modify storage cenchant:items list append value {Slot: 16, id: "minecraft:golden_axe"}
-#data modify storage cenchant:items list append value {Slot: 17, id: "minecraft:diamond_axe"}
-#data modify storage cenchant:items list append value {Slot: 18, id: "minecraft:netherite_axe"}
-#data modify storage cenchant:items list append value {Slot: 19, id: "minecraft:wooden_shovel"}
-#data modify storage cenchant:items list append value {Slot: 20, id: "minecraft:stone_shovel"}
-#data modify storage cenchant:items list append value {Slot: 21, id: "minecraft:iron_shovel"}
-#data modify storage cenchant:items list append value {Slot: 22, id: "minecraft:golden_shovel"}
-#data modify storage cenchant:items list append value {Slot: 23, id: "minecraft:diamond_shovel"}
-#data modify storage cenchant:items list append value {Slot: 24, id: "minecraft:netherite_shovel"}
-#data modify storage cenchant:items list append value {Slot: 25, id: "minecraft:wooden_hoe"}
-#data modify storage cenchant:items list append value {Slot: 26, id: "minecraft:stone_hoe"}
-#data modify storage cenchant:items list append value {Slot: 27, id: "minecraft:iron_hoe"}
-#data modify storage cenchant:items list append value {Slot: 28, id: "minecraft:golden_hoe"}
-#data modify storage cenchant:items list append value {Slot: 29, id: "minecraft:diamond_hoe"}
-#data modify storage cenchant:items list append value {Slot: 30, id: "minecraft:netherite_hoe"}
-#data modify storage cenchant:items list append value {Slot: 31, id: "minecraft:leather_boots"}
-#data modify storage cenchant:items list append value {Slot: 32, id: "minecraft:iron_boots"}
-#data modify storage cenchant:items list append value {Slot: 33, id: "minecraft:golden_boots"}
-#data modify storage cenchant:items list append value {Slot: 34, id: "minecraft:diamond_boots"}
-#data modify storage cenchant:items list append value {Slot: 35, id: "minecraft:netherite_boots"}
-#data modify storage cenchant:items list append value {Slot: 36, id: "minecraft:leather_leggings"}
-#data modify storage cenchant:items list append value {Slot: 37, id: "minecraft:iron_leggings"}
-#data modify storage cenchant:items list append value {Slot: 38, id: "minecraft:golden_leggings"}
-#data modify storage cenchant:items list append value {Slot: 39, id: "minecraft:diamond_leggings"}
-#data modify storage cenchant:items list append value {Slot: 40, id: "minecraft:netherite_leggings"}
-#data modify storage cenchant:items list append value {Slot: 41, id: "minecraft:leather_chestplate"}
-#data modify storage cenchant:items list append value {Slot: 42, id: "minecraft:iron_chestplate"}
-#data modify storage cenchant:items list append value {Slot: 43, id: "minecraft:golden_chestplate"}
-#data modify storage cenchant:items list append value {Slot: 44, id: "minecraft:diamond_chestplate"}
-#data modify storage cenchant:items list append value {Slot: 45, id: "minecraft:netherite_chestplate"}
-#data modify storage cenchant:items list append value {Slot: 46, id: "minecraft:leather_helmet"}
-#data modify storage cenchant:items list append value {Slot: 47, id: "minecraft:iron_helmet"}
-#data modify storage cenchant:items list append value {Slot: 48, id: "minecraft:golden_helmet"}
-#data modify storage cenchant:items list append value {Slot: 49, id: "minecraft:diamond_helmet"}
-#data modify storage cenchant:items list append value {Slot: 50, id: "minecraft:netherite_helmet"}
-#data modify storage cenchant:items list append value {Slot: 51, id: "minecraft:turtle_helmet"}
-#data modify storage cenchant:items list append value {Slot: 52, id: "minecraft:shield"}
-#data modify storage cenchant:items list append value {Slot: 53, id: "minecraft:flint_and_steel"}
-#data modify storage cenchant:items list append value {Slot: 54, id: "minecraft:carrot_on_a_stick"}
-#data modify storage cenchant:items list append value {Slot: 55, id: "minecraft:warped_fungus_on_a_stick"}
-#data modify storage cenchant:items list append value {Slot: 56, id: "minecraft:bow"}
-#data modify storage cenchant:items list append value {Slot: 57, id: "minecraft:crossbow"}
-#data modify storage cenchant:items list append value {Slot: 58, id: "minecraft:elytra"}
-#data modify storage cenchant:items list append value {Slot: 59, id: "minecraft:fishing_rod"}
+data modify storage cenchant:items list append value {Slot: 0, id: "minecraft:bowl"}
+data modify storage cenchant:items list[0] set from storage cenchant:settings fillitem.id
+data modify storage cenchant:items list append value {Slot: 1, id: "minecraft:arrow"}
+data modify storage cenchant:items list append value {Slot: 2, id: "minecraft:brick"}
+data modify storage cenchant:items list append value {Slot: 3, id: "minecraft:clock"}
+data modify storage cenchant:items list append value {Slot: 4, id: "minecraft:cocoa_beans"}
+data modify storage cenchant:items list append value {Slot: 5, id: "minecraft:crafting_table"}
+data modify storage cenchant:items list append value {Slot: 6, id: "minecraft:diamond"}
+data modify storage cenchant:items list append value {Slot: 7, id: "minecraft:egg"}
+data modify storage cenchant:items list append value {Slot: 8, id: "minecraft:ender_pearl"}
+data modify storage cenchant:items list append value {Slot: 9, id: "minecraft:experience_bottle"}
+data modify storage cenchant:items list append value {Slot: 10, id: "minecraft:feather"}
+data modify storage cenchant:items list append value {Slot: 11, id: "minecraft:fire_charge"}
+data modify storage cenchant:items list append value {Slot: 12, id: "minecraft:golden_apple"}
+data modify storage cenchant:items list append value {Slot: 13, id: "minecraft:ink_sac"}
+data modify storage cenchant:items list append value {Slot: 14, id: "minecraft:iron_bars"}
+data modify storage cenchant:items list append value {Slot: 15, id: "minecraft:iron_ingot"}
+data modify storage cenchant:items list append value {Slot: 16, id: "minecraft:kelp"}
+data modify storage cenchant:items list append value {Slot: 17, id: "minecraft:lead"}
+data modify storage cenchant:items list append value {Slot: 18, id: "minecraft:lightning_rod"}
+data modify storage cenchant:items list append value {Slot: 19, id: "minecraft:blaze_rod"}
+data modify storage cenchant:items list append value {Slot: 20, id: "minecraft:packed_ice"}
+data modify storage cenchant:items list append value {Slot: 21, id: "minecraft:potato"}
+data modify storage cenchant:items list append value {Slot: 22, id: "minecraft:pufferfish"}
+data modify storage cenchant:items list append value {Slot: 23, id: "minecraft:rabbit_hide"}
+data modify storage cenchant:items list append value {Slot: 24, id: "minecraft:raw_cod"}
+data modify storage cenchant:items list append value {Slot: 25, id: "minecraft:redstone"}
+data modify storage cenchant:items list append value {Slot: 26, id: "minecraft:rotten_flesh"}
+data modify storage cenchant:items list append value {Slot: 27, id: "minecraft:scute"}
+data modify storage cenchant:items list append value {Slot: 28, id: "minecraft:spider_eye"}
+data modify storage cenchant:items list append value {Slot: 29, id: "minecraft:tnt"}
+data modify storage cenchant:items list append value {Slot: 30, id: "minecraft:tropical_fish"}
 # list of all enchantable tools
 data remove storage cenchant:tools list
-data modify storage cenchant:tools list append value {Slot: 0, id: "minecraft:gray_stained_glass_pane"}
+data modify storage cenchant:tools list append value {Slot: 0, id: "minecraft:bowl"}
+data modify storage cenchant:tools list[0] set from storage cenchant:settings fillitem.id
 data modify storage cenchant:tools list append value {Slot: 11, id: "minecraft:wooden_sword"}
 data modify storage cenchant:tools list append value {Slot: 12, id: "minecraft:stone_sword"}
 data modify storage cenchant:tools list append value {Slot: 13, id: "minecraft:iron_sword"}
