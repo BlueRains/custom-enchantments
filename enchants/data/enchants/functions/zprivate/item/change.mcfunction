@@ -1,6 +1,5 @@
 scoreboard players reset @s ce.item
 data modify entity @s data.chest set from block ~ ~ ~ Items
-scoreboard players reset @s ce.modify
 data modify storage list:compare B set from storage cenchant:items storage
 data modify storage list:iteration List set from entity @s data.chest
 function enchants:zprivate/list/slot/find

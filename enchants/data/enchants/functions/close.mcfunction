@@ -27,18 +27,26 @@ item replace block ~ ~ ~ container.26 from block ~ ~ ~ container.0
 # end
 particle angry_villager ~ ~ ~
 scoreboard players reset @s ce.timer
+scoreboard players reset @s ce.tool
+scoreboard players reset @s ce.item
 tag @s remove open
-execute as @a[tag=enchanter] at @s unless entity @e[type=marker,distance=..5] run tag @s remove enchanter
-summon item ~ ~2 ~ {Tags: ["tool"], Item: {id: "minecraft:acacia_boat", Count: 1b}}
-data modify entity @e[type=item,distance=..2,tag=tool,limit=1] Item set from block ~ ~ ~ Items[10]
-tag @e[type=item,distance=..2] remove tool
-summon item ~ ~2 ~ {Tags: ["item"], Item: {id: "minecraft:acacia_boat", Count: 1b}}
-data modify entity @e[type=item,distance=..2,tag=item,limit=1] Item set from block ~ ~ ~ Items[12]
-tag @e[type=item,distance=..2] remove item
-execute store result score @s ce.timer run data get block ~ ~ ~ Items[12].Slot
-execute if score @s ce.timer matches 12 run data modify entity @e[type=item,distance=..2,tag=item,limit=1,nbt={Item: {id: "minecraft:acacia_boat", Count: 1b}}] Item set from block ~ ~ ~ Items[12]
-kill @e[type=item,distance=..2,nbt={Item: {id: "minecraft:gray_stained_glass_pane"}}]
-data modify block ~ ~ ~ Items prepend from storage cenchant:settings fill
+
+execute store result score @s ce.count run data get block ~ ~ ~ Items[10].Slot
+execute if score @s ce.count matches 10 run summon item ~ ~1 ~ {Tags: ["cusEnch.tool"], Item: {id: "minecraft:acacia_boat", Count: 1b}}
+data modify entity @e[type=item,distance=..2,tag=cusEnch.tool,limit=1] Item set from block ~ ~ ~ Items[10]
+tag @e[type=item,distance=..2] remove cusEnch.tool
+
+execute store result score @s ce.count run data get block ~ ~ ~ Items[12].Slot
+execute if score @s ce.count matches 12 run summon item ~ ~1 ~ {Tags: ["cusEnch.item"], Item: {id: "minecraft:acacia_boat", Count: 1b}}
+data modify entity @e[type=item,distance=..2,tag=cusEnch.item,limit=1] Item set from block ~ ~ ~ Items[12]
+data modify storage cenchant:settings temp set from storage cenchant:settings fillitem
+execute store result score @s ce.item run data modify storage cenchant:settings temp.id set from block ~ ~ ~ Items[12].id
+execute if score @s ce.item matches 0 run kill @e[type=item,tag=cusEnch.item,distance=..2]
+data remove storage cenchant:settings temp
+scoreboard players reset @s ce.item
+tag @e[type=item,distance=..2] remove cusEnch.item
+
+data modify block ~ ~ ~ Items prepend from storage cenchant:settings fillitem
 item replace block ~ ~ ~ container.1 from block ~ ~ ~ container.0
 item replace block ~ ~ ~ container.2 from block ~ ~ ~ container.0
 item replace block ~ ~ ~ container.3 from block ~ ~ ~ container.0

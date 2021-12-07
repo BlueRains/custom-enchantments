@@ -4,15 +4,21 @@
 #define storage cenchant:enchantments
 #define storage cenchant:settings
 scoreboard objectives add ce.list dummy
+scoreboard objectives add ce.settings dummy
 scoreboard objectives add ce.tool dummy
 scoreboard objectives add ce.item dummy
 scoreboard objectives add ce.modify dummy
 scoreboard objectives add ce.timer dummy
+scoreboard objectives add ce.count dummy
 scoreboard objectives add chests minecraft.custom:minecraft.open_chest
 data modify storage cenchant:tools storage set value 10b
 data modify storage cenchant:items storage set value 12b
-data modify storage cenchant:settings fillitem set value {Slot: 0b, Count: 1b, id: "minecraft:gray_stained_glass_pane", tag: {display: {Name: '{"text":""}'}}}
-data modify storage cenchant:settings tempitem set value {Slot: 0b, Count: 1b, id: "minecraft:bowl"}
+data modify storage cenchant:settings fillitem set value {Slot: 0b, Count: 1b, id: "minecraft:gray_stained_glass_pane", tag: {CustomEnchantments: 1b, display: {Name: '{"text":""}'}}}
+data modify storage cenchant:settings tempitem set value {Slot: 0b, Count: 1b, id: "minecraft:bowl", tag: {CustomEnchantments: 1b}}
+# Settings:
+data modify storage cenchant:settings fillitem.id set value "minecraft:gray_stained_glass_pane"
+data modify storage cenchant:settings fillitem.tag.display.name set value '{"text":""}'
+scoreboard players set $bookcount ce.settings 3
 # list of all enchantments
 data remove storage cenchant:enchantments chest
 data remove storage cenchant:enchantments axe
