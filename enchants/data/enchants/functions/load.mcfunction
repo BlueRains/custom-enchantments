@@ -143,7 +143,7 @@ data modify storage cenchant:enchantments trident append value {id: "minecraft:b
 # list of all supportive items
 data remove storage cenchant:items list
 data modify storage cenchant:items list append value {Slot: 0, id: "minecraft:bowl"}
-data modify storage cenchant:items list[0] set from storage cenchant:settings fillitem.id
+data modify storage cenchant:items list[0] set from storage cenchant:settings tempitem.id
 data modify storage cenchant:items list append value {Slot: 1, id: "minecraft:arrow"}
 data modify storage cenchant:items list append value {Slot: 2, id: "minecraft:brick"}
 data modify storage cenchant:items list append value {Slot: 3, id: "minecraft:clock"}
@@ -177,7 +177,7 @@ data modify storage cenchant:items list append value {Slot: 30, id: "minecraft:t
 # list of all enchantable tools
 data remove storage cenchant:tools list
 data modify storage cenchant:tools list append value {Slot: 0, id: "minecraft:bowl"}
-data modify storage cenchant:tools list[0] set from storage cenchant:settings fillitem.id
+data modify storage cenchant:tools list[0] set from storage cenchant:settings tempitem.id
 data modify storage cenchant:tools list append value {Slot: 11, id: "minecraft:wooden_sword"}
 data modify storage cenchant:tools list append value {Slot: 12, id: "minecraft:stone_sword"}
 data modify storage cenchant:tools list append value {Slot: 13, id: "minecraft:iron_sword"}
